@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <!-- <link rel="stylesheet" href="main_css.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main_css.css') }}">
+</head>
+
+<body id="content">
+    <h1>Happy Birthday Akanksha!</h1>
+    <p>
+        I hope you are having a <i>grape</i> birthday.<br/><br/>
+        
+        I consider myself super lucky to have met such a wonderful bean in my lifetime.<br/>
+        You know how there are some people who light up a room when they walk into it? You tend to light up rooms just by being nearby.<br/>
+        I love your strength and resilience and how hard you work to make the world better (despite whatever "debatable" grudges people may hold).<br/>
+        Keep on being your amazing self.<br/><br/>
+        
+        I hope your next year is filled with lots of laughter, good times, and fantastic hooman conversations.<br/><br/>
+        
+        - London :)
+        
+        P.S. Every time you refresh this page, a new random doggo pic will appear!
+    </p>
+    <img id="dog"/>
+    <p>
+    <!-- <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script> -->
+    <script>
+        // Create a request variable and assign a new XMLHttpRequest object to it.
+        var request = new XMLHttpRequest();
+        
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', 'https://dog.ceo/api/breeds/image/random', true);
+        
+        request.onload = function () {
+          // Begin accessing JSON data here
+          // Begin accessing JSON data here
+          var data = JSON.parse(this.response);
+          console.log(data);
+          console.log(data.message)
+          document.getElementById("dog").src=data.message;
+        }
+        
+        // Send request
+        request.send();
+    </script>
+    </p>
+</body>
