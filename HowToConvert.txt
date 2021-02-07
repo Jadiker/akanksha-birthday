@@ -1,0 +1,4 @@
+Take index.html out of the templates folder (and into the main high level folder)
+Take main_css.css out of the static folder (and into the main high level folder)
+Change the CSS import inside index.html to the one that's currently commented out
+Move grapes.jpg out of the static folder
